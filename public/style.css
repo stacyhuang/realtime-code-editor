@@ -1,0 +1,20 @@
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#videos {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  margin-left: 34px;
+}
+
+video {
+  max-width: 200px;
+  max-height: 150px;
+  margin-right: 5px;
+}

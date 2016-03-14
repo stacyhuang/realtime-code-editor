@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Realtime Code Editor</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="editor"></div>
+    <div id="videos">
+      <video id="localVideo" autoplay muted></video>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascript/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascript/app.js"></script>
+    <script src="/javascript/adapter.js"></script>
+  </body>
+</html>
