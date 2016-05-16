@@ -196,12 +196,16 @@ $(function() {
     constraints = mergeConstraints(constraints, sdpConstraints);
     console.log('Sending offer to peer, with constraints: \n' +
       '  \'' + JSON.stringify(constraints) + '\'.');
-    pc.createOffer(setLocalAndSendMessage, null, constraints);
+    pc.createOffer(setLocalAndSendMessage, failureCallback, constraints);
   }
 
   function doAnswer() {
     console.log('Sending answer to peer.');
-    pc.createAnswer(setLocalAndSendMessage, null, sdpConstraints);
+    pc.createAnswer(setLocalAndSendMessage, failureCallback, sdpConstraints);
+  }
+
+  function failureCallback() {
+    console.log("Failed to create.");
   }
 
   function mergeConstraints(cons1, cons2) {
