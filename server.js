@@ -2,13 +2,12 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var port = process.env.PORT || 8080;
 
-app.set('ip', '127.0.0.1');
-app.set('port', 8080);
 app.use(express.static(__dirname + '/public'));
 
-server.listen(app.get('port'), app.get('ip'), function() {
-  console.log('Server listening on http://' + app.get('ip') + ":" + app.get('port'));
+server.listen(port, function() {
+  console.log('Server listening on port ' + port);
 });
 
 io.sockets.on('connection', function(socket) {
